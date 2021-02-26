@@ -34,6 +34,8 @@ let cargoItems = function(arr){
   str =  input.question("Desired item? ");
   if (cargoHold.includes(str)){
   cargoArray.push(str);
+  i = cargoHold.indexOf(str)
+  cargoHold[i] = 'ice cream';
 //  cargoHold.replace(str, 'ice cream')
    }
  } return cargoArray;
@@ -57,3 +59,4 @@ console.log("Hold status: " + holdStatus(cargoHold));
 console.log("Fuel level: " + fuelCheck(fuelLevel));
 console.log('This is how much fuel we are taking, ' + siphonFuel(fuelLevel, fuelCheck(fuelLevel)) +'!');
 console.log(cargoItems(cargoHold));
+console.log(cargoHold);

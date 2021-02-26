@@ -44,10 +44,9 @@ let cargoItems = function(arr){
  } return cargoArray;
 };
 
-function irs (fuelLevel, carogstolen){
+function irs (fuelLevel){
 let carg = cargoItems(cargoArray);
-let sentence =  console.log(`Raided ${fuelLevel}kg of fuel from the tanks, and stole ${carg[0]} and ${carg[1]} from the cargo hold.`);
-return sentence;
+return console.log(`Raided ${fuelLevel}kg of fuel from the tanks, and stole ${carg[0]} and ${carg[1]} from the cargo hold.`);
 };
 
 
@@ -65,9 +64,9 @@ let fuelLevel = 190001;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
 console.log("Fuel level: " + checkFuel(fuelCheck(fuelLevel)));
-console.log("Hold status: " + holdStatus(cargoHold));
-console.log("Fuel level: " + fuelCheck(fuelLevel));
-console.log('This is how much fuel we are taking, ' + siphonFuel(fuelLevel, fuelCheck(fuelLevel)) +'!');
+console.log("Hold status: " + holdStatus(cargoHold)+"\n");
+//console.log("Fuel level: " + fuelCheck(fuelLevel));
+//console.log('This is how much fuel we are taking, ' + siphonFuel(fuelLevel, fuelCheck(fuelLevel)) +'!');
 //console.log(cargoItems(cargoHold));
 //console.log(cargoHold);
 console.log(irs(siphonFuel(fuelLevel, fuelCheck(fuelLevel))));

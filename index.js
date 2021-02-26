@@ -22,24 +22,34 @@ let fuelCheck = function(level){
 
 let siphonFuel = function (fuelevel, level){
   let siphonLevel = 0;
-  return fuelLevel - fuelCheck(level);
+  siphonLevel = fuelLevel - fuelCheck(level)
+  return siphonLevel;
 };
 
 
 const input = require('readline-sync');
 
+let cargoArray = [];
 let cargoItems = function(arr){
-  let cargoArray = [];
+
   while (cargoArray.length< 2){
   str =  input.question("Desired item? ");
+  str2 = input.question("Replace item with? ");
   if (cargoHold.includes(str)){
   cargoArray.push(str);
-  i = cargoHold.indexOf(str)
-  cargoHold[i] = 'ice cream';
+  i = cargoHold.indexOf(str);
+  cargoHold[i] = str2;
 //  cargoHold.replace(str, 'ice cream')
    }
  } return cargoArray;
 };
+
+function irs (fuelLevel, carogstolen){
+let carg = cargoItems(cargoArray);
+let sentence =  console.log(`Raided ${fuelLevel}kg of fuel from the tanks, and stole ${carg[0]} and ${carg[1]} from the cargo hold.`);
+return sentence;
+};
+
 
 function holdStatus(arr){
   if (arr.length < 7) {
@@ -58,5 +68,6 @@ console.log("Fuel level: " + checkFuel(fuelCheck(fuelLevel)));
 console.log("Hold status: " + holdStatus(cargoHold));
 console.log("Fuel level: " + fuelCheck(fuelLevel));
 console.log('This is how much fuel we are taking, ' + siphonFuel(fuelLevel, fuelCheck(fuelLevel)) +'!');
-console.log(cargoItems(cargoHold));
-console.log(cargoHold);
+//console.log(cargoItems(cargoHold));
+//console.log(cargoHold);
+console.log(irs(siphonFuel(fuelLevel, fuelCheck(fuelLevel))));

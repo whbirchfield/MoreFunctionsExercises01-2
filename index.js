@@ -1,7 +1,7 @@
-function checkFuel(levelX) {
-  if (levelX > 100000){
+function checkFuel(level) {
+  if (level > 100000){
     return 'green';
-  } else if (levelX > 50000){
+  } else if (level > 50000){
     return 'yellow';
   } else {
     return 'red';
@@ -26,6 +26,19 @@ let siphonFuel = function (fuelevel, level){
 };
 
 
+const input = require('readline-sync');
+
+let cargoItems = function(arr){
+  let cargoArray = [];
+  while (cargoArray.length< 2){
+  str =  input.question("Desired item? ");
+  if (cargoHold.includes(str)){
+  cargoArray.push(str);
+//  cargoHold.replace(str, 'ice cream')
+   }
+ } return cargoArray;
+};
+
 function holdStatus(arr){
   if (arr.length < 7) {
     return `Spaces available: ${7-arr.length}.`;
@@ -43,3 +56,4 @@ console.log("Fuel level: " + checkFuel(fuelCheck(fuelLevel)));
 console.log("Hold status: " + holdStatus(cargoHold));
 console.log("Fuel level: " + fuelCheck(fuelLevel));
 console.log('This is how much fuel we are taking, ' + siphonFuel(fuelLevel, fuelCheck(fuelLevel)) +'!');
+console.log(cargoItems(cargoHold));

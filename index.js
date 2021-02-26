@@ -42,4 +42,4 @@ let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold
 console.log("Fuel level: " + checkFuel(fuelCheck(fuelLevel)));
 console.log("Hold status: " + holdStatus(cargoHold));
 console.log("Fuel level: " + fuelCheck(fuelLevel));
-console.log(siphonFuel(fuelLevel, fuelCheck(fuelLevel)));
+console.log('This is how much fuel we are taking, ' + siphonFuel(fuelLevel, fuelCheck(fuelLevel)) +'!');
